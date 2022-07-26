@@ -11,7 +11,7 @@ class PetViewSet(ModelViewSet):
 
     serializer_class = PetSerializer
     queryset = Pet.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowAny]
 
 class ProductViewSet(ModelViewSet):
 
@@ -19,7 +19,7 @@ class ProductViewSet(ModelViewSet):
 
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowAny]
         
 class DocumentationView(TemplateView):
     template_name = 'docs.html'
